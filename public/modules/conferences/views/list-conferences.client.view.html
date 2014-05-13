@@ -1,0 +1,14 @@
+<section data-ng-controller="ConferencesController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Conferences</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="conference in conferences" data-ng-href="#!/conferences/{{conference._id}}" class="list-group-item">
+            <small class="list-group-item-text">{{conference.created | date:'medium'}} / {{conference.user.displayName}}</small>
+            <h4 class="list-group-item-heading">{{conference.name}}</h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!conferences.$resolved || conferences.length">
+    	No Conferences yet, why don't you <a href="/#!/conferences/create">create one</a>?
+    </div>
+</section>
