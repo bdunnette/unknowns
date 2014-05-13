@@ -69,5 +69,10 @@ angular.module('conferences').controller('ConferencesController', ['$scope', '$s
           console.log(slide);
           $scope.conference.slides.push(slide._id);
         };
+      
+        $scope.removeSlide = function (index) {
+          console.log(index);
+          $scope.conference.slides.splice(index, 1);
+        };
     }
 ]);

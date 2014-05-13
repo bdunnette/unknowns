@@ -14,7 +14,7 @@
                 <div class="form-group">
                     <label class="control-label" for="name">Slides</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="conference.slides" id="slides" class="form-control" placeholder="Slides" required>
+                        <div ng-repeat="slide in conference.slides track by $index">{{$index}} {{slide}} <a ng-click="removeSlide($index)">Remove</a></div>
                     </div>
                 </div>
                 <div class="form-group">
